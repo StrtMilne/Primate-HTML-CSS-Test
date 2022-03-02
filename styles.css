@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500&display=swap');
+
+:root {
+  --color-primary: #184269;
+  --color-secondary: #f4f4f4;
+}
+
+body {
+  background: var(--color-secondary, white);
+
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  justify-content: center;
+
+  margin: 2rem auto;
+
+  width: 100%;
+  max-width: 1500px;
+}
+
+.title,
+.subtitle {
+  margin: 0 auto;
+  width: 100%;
+  color: var(--color-primary, black);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.h3 {
+  font-family: 'Quicksand', sans-serif;
+}
+
+.spacer {
+  display: block;
+
+  margin: 2rem auto;
+
+  width: 100%;
+  height: 2px;
+
+  background-color: var(--color-primary, black);
+  border: 0;
+}
+
+iframe {
+  width: 100%;
+  border: 0;
+}
+
+/* your styles here */
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+
+/* Card class created so that line-container class can inheirt the height of the card text element - enables line to change based on quantity of text and subsequent height without having to hard-code values. 
+
+ */
+
+.card {
+  height: fit-content;
+
+  display: flex;
+}
+
+.card-text {
+  width: 312px;
+  height: fit-content;
+
+  background-color: #34344D;
+  color: white;
+
+  border-radius: 4px 20px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  margin: 0;
+  padding: 32px 32px 8px 32px;
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+
+  line-height: 32px;
+}
+
+/* Accounts for shift in header in card-text with addition of 'top dot' classes */
+
+.non-initial {
+  margin: -20px 0 0 0;
+}
+
+.main-text {
+  margin: 0;
+  padding: 8px 32px 32px 32px;
+
+  font-family: Quicksand;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+
+  line-height: 26px;
+  letter-spacing: 0.015em;
+}
+
+/* Created a single dot class to prevent need to duplicate code */
+
+.dot {
+  width: 14px;
+  height: 14px;
+
+  border: 3px solid #3296FF;
+  border-radius: 50%;
+
+  background-color: black;
+
+  position: relative;
+}
+
+/* Created posititions and additional styling for dots */
+
+.bottom {
+  top: calc(100% - 42px);
+  right: 10px;
+}
+
+.top {
+  background-color: #3296FF;
+
+  top: 22px;
+  right: 10px;
+}
+
+/* Line container inherits grid height if grid is direct parent, so needs to be within card class (above).
+*/
+
+.line-container {
+  display: flex;
+  flex-direction: row;
+
+  height: auto;
+}
+
+.bottom-line {
+  width: 50.5px;
+  height: calc(100% - 94.5px);
+
+  border-bottom: 3px solid #3296FF;
+  border-right: 3px solid #3296FF;
+  border-radius: 0 0 33.5px;
+
+  position: relative;
+  top: 61.5px;
+  right: 10;
+}
+
+.top-line {
+  width: 50.5px;
+  height: 33.5px;
+
+  border-top: 3px solid #3296FF;
+  border-left: 3px solid #3296FF;
+  border-radius: 33.5px 0 0 0;
+
+  position: relative;
+  top: 30.5px;
+  right: 12.5px;
+
+  margin-right: -3px;
+}
